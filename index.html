@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Highway Racer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOADING SCREEN ================= -->
+
+    <div id="loadingScreen">
+        <h1>HIGHWAY RACER</h1>
+        <p>Loading...</p>
+    </div>
+
+    <!-- ================= MAIN MENU ================= -->
+
+    <div id="mainMenu" class="screen">
+
+        <h1 class="gameTitle">
+            HIGHWAY RACER
+        </h1>
+
+        <button id="playBtn">
+            ▶ PLAY
+        </button>
+
+        <button id="garageBtn">
+            🚗 GARAGE
+        </button>
+
+        <button id="settingsBtn">
+            ⚙ SETTINGS
+        </button>
+
+        <button id="aboutBtn">
+            ℹ ABOUT
+        </button>
+
+    </div>
+
+    <!-- ================= GARAGE ================= -->
+
+    <div id="garageScreen" class="screen hidden">
+
+        <h2>Garage</h2>
+
+        <div id="carList">
+
+            <div class="carCard selected">
+
+                <h3>Starter Car</h3>
+
+                <img src="assets/images/player-car.png" alt="Car">
+
+                <button>Select</button>
+
+            </div>
+
+        </div>
+
+        <button class="backBtn">
+            ← Back
+        </button>
+
+    </div>
+
+    <!-- ================= SETTINGS ================= -->
+
+    <div id="settingsScreen" class="screen hidden">
+
+        <h2>Settings</h2>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="musicToggle"
+                checked>
+
+            Music
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="soundToggle"
+                checked>
+
+            Sound
+
+        </label>
+
+        <button class="backBtn">
+            ← Back
+        </button>
+
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+
+    <div id="aboutScreen" class="screen hidden">
+
+        <h2>About</h2>
+
+        <p>
+
+            Highway Racer made with
+            HTML, CSS and JavaScript.
+
+        </p>
+
+        <button class="backBtn">
+            ← Back
+        </button>
+
+    </div>
+
+    <!-- ================= GAME UI ================= -->
+
+    <div id="gameContainer" class="hidden">
+
+        <!-- Canvas -->
+
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- HUD -->
+
+        <div id="hud">
+
+            <div class="hudBox">
+
+                Score
+
+                <span id="score">
+                    0
+                </span>
+
+            </div>
+
+            <div class="hudBox">
+
+                Best
+
+                <span id="bestScore">
+                    0
+                </span>
+
+            </div>
+
+            <div class="hudBox">
+
+                Speed
+
+                <span id="speed">
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Pause -->
+
+        <button id="pauseBtn">
+
+            ⏸
+
+        </button>
+
+        <!-- Game Over -->
+
+        <div id="gameOver" class="hidden">
+
+            <h1>
+
+                GAME OVER
+
+            </h1>
+
+            <p>
+
+                Score :
+                <span id="finalScore">
+
+                    0
+
+                </span>
+
+            </p>
+
+            <button id="restartBtn">
+
+                PLAY AGAIN
+
+            </button>
+
+            <button id="menuBtn">
+
+                MAIN MENU
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= MOBILE CONTROLS ================= -->
+
+    <div id="mobileControls">
+
+        <button id="leftBtn">
+
+            ◀
+
+        </button>
+
+        <button id="nitroBtn">
+
+            ⚡
+
+        </button>
+
+        <button id="rightBtn">
+
+            ▶
+
+        </button>
+
+    </div>
+
+    <!-- ================= AUDIO ================= -->
+
+    <audio
+        id="bgMusic"
+        loop>
+
+        <source
+            src="assets/sounds/music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <audio id="crashSound">
+
+        <source
+            src="assets/sounds/crash.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <audio id="coinSound">
+
+        <source
+            src="assets/sounds/coin.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
